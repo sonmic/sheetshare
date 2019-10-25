@@ -17,6 +17,9 @@ class App extends Component {
     this.state = {
       title: "",
       blurb: "",
+      instrument:"",
+      genre:"",
+      
     };
     //bind
     this.handleChange = this.handleChange.bind(this);
@@ -26,11 +29,11 @@ class App extends Component {
     
   }
 
-  //lifecycle methods
-  // componentDidMount() {
-  //  this.props.getPosts();
-  //  this.props.getUser();
-
+  // lifecycle methods
+  componentDidMount() {
+   this.props.getPosts();
+   this.props.getUser();
+  }
   // }
   handleDelete(id){
     this.props.deletePost(id);
@@ -48,14 +51,18 @@ class App extends Component {
     e.preventDefault();
     const post = {
       title: this.state.title,
-      blurb: this.state.blurb
+      blurb: this.state.blurb,
+      instrument: this.state.instrument,
+      genre: this.state.genre
     }
     console.log(post);
     this.props.savePosts(post);
     this.props.getPosts();
     this.setState({
       title:'',
-      blurb:''
+      blurb:'',
+      instrument:'',
+      genre:''
     })
   }
 
@@ -65,7 +72,9 @@ class App extends Component {
       return(
         <PostCard 
         key={key} 
-        title={post.title} 
+        title={post.title}
+        instrument={post.instrument} 
+        genre={post.genre}
         blurb={post.blurb} 
         onClick={() => this.handleDelete(key)}>
         </PostCard>
@@ -90,6 +99,26 @@ class App extends Component {
                   placeholder="Song Title..."
                   required />
               </div>
+              <div className="form-group">
+              <input
+                  onChange={this.handleChange}
+                  value={this.state.instrument}
+                  type="text"
+                  name="instrument"
+                  className="form-control no-border"
+                  placeholder="Instrument..."
+                  required />
+              </div>
+              <div className="form-group">
+              <input
+                  onChange={this.handleChange}
+                  value={this.state.genre}
+                  type="text"
+                  name="genre"
+                  className="form-control no-border"
+                  placeholder="Genre..."
+                  required />
+              </div>
 
               <div className="form-group">
                 <textarea
@@ -105,7 +134,7 @@ class App extends Component {
                 <button className="btn btn-primary col-sm-12">Submit</button>
               </div>
             </form>
-            {this.renderPosts()}
+            {(this.props.user != null)? this.renderPosts():null}
           </div>
         </div>
       </div>
