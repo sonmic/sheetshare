@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux';
-import { allPosts} from '../actions/postAction';
-import { getUser } from '../actions/userAction'
+import { allPosts } from '../actions/postAction';
+import { getUser } from '../actions/userAction';
 import PostCard  from './PostCard';
 
 
