@@ -15,13 +15,18 @@ class Header extends Component {
     <div className="navbar-nav">
       <Link className="nav-item nav-link" to="/">Home </Link>
       <Link className="nav-item nav-link" to="/search">Search</Link>
+      
       {
           this.props.user == null ? 
           ( <Link className="nav-item nav-link" to="/login">Login</Link>)
           :
           (<Link onClick={()=> this.props.logout()} className="nav-item nav-link" to="/home">Logout</Link>)
       }
-     
+     {
+         this.props.user != null ? (<Link className="nav-item nav-link" to="/all">Profile</Link>)
+         :
+         null
+     }
       
       {/* <a className="nav-item nav-link" href="#">Pricing</a>
       <a className="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> */}

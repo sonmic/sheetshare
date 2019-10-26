@@ -19,11 +19,11 @@ const PostCard = ({ title, blurb, onClick, genre, instrument }) => {
         <h6 className="card-title">{instrument}</h6>
         {blurb}
         <hr />
-        <button
+        {(onClick == null)? null : <button
           name="delete"
           onClick={onClick}
           className="btn btn-danger">Delete</button>
-        
+        }
       </div>
     </div>
 
