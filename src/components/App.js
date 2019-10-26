@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux';
-import { getPosts, savePosts, deletePost} from '../actions/postAction';
+import { getPosts, savePosts, deletePost, allPosts } from '../actions/postAction';
 import PostCard  from './PostCard';
 import { getUser } from '../actions/userAction';
 
@@ -35,7 +35,8 @@ class App extends Component {
   // lifecycle methods
   componentDidMount() {
    
-   this.props.getPosts();
+   //this.props.getPosts();
+   this.props.allPosts();
    this.props.getUser();
   }
   // 
@@ -198,4 +199,4 @@ function mapStateToProps(state, ownProps){
   }
 }
 
-export default connect(mapStateToProps, { getPosts, savePosts, deletePost, getUser})(App);
+export default connect(mapStateToProps, { allPosts, getPosts, savePosts, deletePost, getUser})(App);
