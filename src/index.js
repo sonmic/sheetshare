@@ -7,6 +7,7 @@ import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import Login from './components/Login';
 import Header from './routes/Header';
 import SearchBar from './components/SearchBar'
+import AllPosts from './components/AllPosts'
 // import LoadingComponent from './components/LoadingComponent';
 // import AuthenticatedComponent from './components/AuthenticatedComponent';
 //redux
@@ -28,6 +29,7 @@ ReactDOM.render(
                     <Header />
                     <div>
                         <Switch>
+                            <Route exact path='/all' component={AllPosts} />
                             <Route exact path='/login' component={Login} />
                             <Route exact path='/search' component={SearchBar} />
                             {/* <AuthenticatedComponent> */}

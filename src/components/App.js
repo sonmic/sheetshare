@@ -112,7 +112,6 @@ class App extends Component {
                       onChange={this.handleChange}
                       value={this.state.instrument}
                       name="instrument"
-                      
                       required >
               <option>Select an Instrument...</option>
               <option>Banjo</option>
@@ -157,17 +156,6 @@ class App extends Component {
               <option>Soul</option>     
               </select>
               </div>
-              {/* <div className="form-group">
-              <input
-                  onChange={this.handleChange}
-                  value={this.state.genre}
-                  type="text"
-                  name="genre"
-                  className="form-control no-border"
-                  placeholder="Genre..."
-                  required />
-              </div> */}
-
               <div className="form-group">
                 <textarea
                   onChange={this.handleChange}
