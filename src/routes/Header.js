@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getUser, logout } from '../actions/userAction';
 
@@ -13,12 +13,13 @@ class Header extends Component {
   </button>
   <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div className="navbar-nav">
-      <Link className="nav-item nav-link active" to="/">Home </Link>
+      <Link className="nav-item nav-link" to="/">Home </Link>
+      <Link className="nav-item nav-link" to="/search">Search</Link>
       {
           this.props.user == null ? 
           ( <Link className="nav-item nav-link" to="/login">Login</Link>)
           :
-          (<Link onClick={()=> this.props.logout()} className="nav-item nav-link" to="/login">Logout</Link>)
+          (<Link onClick={()=> this.props.logout()} className="nav-item nav-link" to="/home">Logout</Link>)
       }
      
       

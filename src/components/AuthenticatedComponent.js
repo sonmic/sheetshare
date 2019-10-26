@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 
 class AuthenticatedComponent extends Component {
     componentDidUpdate(){
-        // make sure
+        // make sure loading done/ if no user then push to login
         const {userLoading, user} = this.props;
         if (userLoading === false && !user){
             this.props.history.push('/login');
@@ -13,7 +13,7 @@ class AuthenticatedComponent extends Component {
     }
     render(){
         const { user, userLoading, children } = this.props;
-        return (userLoading === false && user) ? <div>{children}</div> : null;    
+        return (userLoading === false && user) ? this.props.history.push('/home') : null;    
     }
 }
 
