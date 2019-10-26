@@ -36,7 +36,7 @@ class App extends Component {
   componentDidMount() {
    
    //this.props.getPosts();
-   this.props.allPosts();
+   this.props.getPosts();
    this.props.getUser();
   }
   // 

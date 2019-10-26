@@ -29,11 +29,11 @@ ReactDOM.render(
                     <Header />
                     <div>
                         <Switch>
-                            <Route exact path='/all' component={AllPosts} />
+                            <Route exact path='/all' component={App} />
                             <Route exact path='/login' component={Login} />
                             <Route exact path='/search' component={SearchBar} />
                             {/* <AuthenticatedComponent> */}
-                            <Route exact path='/' component={App} />
+                            <Route exact path='/' component={AllPosts} />
                             {/* </AuthenticatedComponent> */}
                             
                         </Switch>
