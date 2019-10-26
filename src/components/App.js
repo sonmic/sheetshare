@@ -20,6 +20,9 @@ class App extends Component {
       instrument:"",
       genre:"",
       
+      
+      
+      
     };
     //bind
     this.handleChange = this.handleChange.bind(this);
@@ -31,10 +34,11 @@ class App extends Component {
 
   // lifecycle methods
   componentDidMount() {
+   
    this.props.getPosts();
    this.props.getUser();
   }
-  // }
+  // 
   handleDelete(id){
     this.props.deletePost(id);
     this.props.getPosts();
@@ -55,7 +59,8 @@ class App extends Component {
       instrument: this.state.instrument,
       genre: this.state.genre
     }
-    console.log(post);
+    
+    // console.log(post);
     this.props.savePosts(post);
     this.props.getPosts();
     this.setState({
@@ -68,6 +73,7 @@ class App extends Component {
 
   //render posts
   renderPosts(){
+    console.log(this.props.posts);
     return _.map(this.props.posts, (post, key) => {
       return(
         <PostCard 
@@ -87,7 +93,8 @@ class App extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-sm-6 col-sm-offset-3">
+          <div className="col-sm-12">
+            {(this.props.user != null)? 
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <input
@@ -100,16 +107,57 @@ class App extends Component {
                   required />
               </div>
               <div className="form-group">
-              <input
-                  onChange={this.handleChange}
-                  value={this.state.instrument}
-                  type="text"
-                  name="instrument"
-                  className="form-control no-border"
-                  placeholder="Instrument..."
-                  required />
+              <select className="form-control" 
+                      id="instrumentSelect"
+                      onChange={this.handleChange}
+                      value={this.state.instrument}
+                      name="instrument"
+                      
+                      required >
+              <option>Select an Instrument...</option>
+              <option>Banjo</option>
+              <option>Bass</option>
+              <option>Bassoon</option>
+              <option>Cello</option>
+              <option>Clarinet</option>
+              <option>Drums</option>
+              <option>Electric Bass</option>
+              <option>Electric Guitar</option>
+              <option>Flute</option>
+              <option>French Horn</option> 
+              <option>Guitar</option>
+              <option>Mandolin</option>
+              <option>Piano</option>
+              <option>Saxophoe</option>
+              <option>Trumpet</option> 
+              <option>Tuba</option> 
+              <option>Ukulele</option> 
+              <option>Viola</option>
+              <option>Violin</option>  
+              </select>
               </div>
               <div className="form-group">
+              <select className="form-control" 
+                      id="genreSelect"
+                      onChange={this.handleChange}
+                      value={this.state.genre}
+                      name="genre"
+                      
+                      required >
+              <option>Select the Genre...</option>
+              <option>Classical</option>
+              <option>Country</option>
+              <option>Folk</option>
+              <option>Latino</option>
+              <option>Jazz</option>
+              <option>Pop</option>
+              <option>Reggae</option>
+              <option>Rock</option> 
+              <option>Rhythm and Blues</option>
+              <option>Soul</option>     
+              </select>
+              </div>
+              {/* <div className="form-group">
               <input
                   onChange={this.handleChange}
                   value={this.state.genre}
@@ -118,7 +166,7 @@ class App extends Component {
                   className="form-control no-border"
                   placeholder="Genre..."
                   required />
-              </div>
+              </div> */}
 
               <div className="form-group">
                 <textarea
@@ -133,7 +181,7 @@ class App extends Component {
               <div className="form-group">
                 <button className="btn btn-primary col-sm-12">Submit</button>
               </div>
-            </form>
+            </form> : null}
             {(this.props.user != null)? this.renderPosts():null}
           </div>
         </div>

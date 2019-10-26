@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import rootReducer from './reducers';
-import { Link , BrowserRouter, Switch, Route} from 'react-router-dom';
+import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import Login from './components/Login';
 import Header from './routes/Header';
-import LoadingComponent from './components/LoadingComponent';
-import AuthenticatedComponent from './components/AuthenticatedComponent';
+import SearchBar from './components/SearchBar'
+// import LoadingComponent from './components/LoadingComponent';
+// import AuthenticatedComponent from './components/AuthenticatedComponent';
 //redux
 import thunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
@@ -22,19 +23,21 @@ const store =  createStore(rootReducer, applyMiddleware(thunk));
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>
-            <LoadingComponent>
+            {/* <LoadingComponent> */}
                 <div>
                     <Header />
                     <div>
                         <Switch>
                             <Route exact path='/login' component={Login} />
+                            <Route exact path='/search' component={SearchBar} />
                             {/* <AuthenticatedComponent> */}
                             <Route exact path='/' component={App} />
                             {/* </AuthenticatedComponent> */}
+                            
                         </Switch>
                     </div>
                 </div>
-            </LoadingComponent>
+            {/* </LoadingComponent> */}
         </BrowserRouter>
     </Provider>, document.getElementById('root'));
 

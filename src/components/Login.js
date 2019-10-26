@@ -15,7 +15,7 @@ class Login extends Component {
                         <button className="btn btn-danger btn-lg">Login With Google</button>
                     </div> */}
                     <br />
-                    <div onClick={this.props.googleLogin}className="col-sm-6">
+                    <div onClick={this.props.googleLogin}className="col-sm-12">
                         <button className="btn btn-info btn-lg">Login With Google</button>
                     </div>
                 </div>
