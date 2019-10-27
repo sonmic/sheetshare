@@ -1,10 +1,8 @@
 import React from "react";
-import { fade, makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import InputBase from "@material-ui/core/InputBase";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import SearchIcon from "@material-ui/icons/Search";
@@ -45,7 +43,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function PrimarySearchAppBar({ history, googleLogin, user }) {
+function PrimarySearchAppBar({ history, googleLogin, user, logout }) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -72,7 +70,14 @@ function PrimarySearchAppBar({ history, googleLogin, user }) {
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <Divider />
-      <MenuItem onClick={handleMenuClose}>Log out</MenuItem>
+      <MenuItem
+        onClick={() => {
+          handleMenuClose();
+          logout();
+        }}
+      >
+        Log out
+      </MenuItem>
     </Menu>
   );
   const getGreeting = () => {
@@ -123,5 +128,5 @@ function mapStateToProps(state, ownProps) {
 
 export default connect(
   mapStateToProps,
-  { googleLogin, getUser }
+  { googleLogin, getUser, logout }
 )(withRouter(PrimarySearchAppBar));
