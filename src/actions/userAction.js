@@ -1,33 +1,31 @@
-import { auth , googleProvider } from '../firebase';
-import { GET_USER } from '../actionTypes';
-import { withRouter } from 'react-router-dom';
+import { auth, googleProvider } from "../firebase";
+import { GET_USER } from "../actionTypes";
 
-export function googleLogin(){
-    return dispatch => {
-        auth.signInWithPopup(googleProvider).then(function(result){
-            console.log(result.user);
-            
-        }).catch(function(error){
-            console.log(error);
-        });
-        
-    }
+export function googleLogin() {
+  return dispatch => {
+    auth
+      .signInWithPopup(googleProvider)
+      .then(function(result) {
+        console.log(result.user);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  };
 }
 
 export function getUser() {
-    return dispatch => {
-        auth.onAuthStateChanged(user => {
-            // console.log(user.uid);
-            dispatch({
-                type: GET_USER,
-                payload: user
-            })
-        })
-    }
+  return dispatch => {
+    auth.onAuthStateChanged(user => {
+      console.log("onAuthStateChanged", user);
+      dispatch({
+        type: GET_USER,
+        payload: user
+      });
+    });
+  };
 }
 
-export function logout(){
-    return dispatch => auth.signOut();
+export function logout() {
+  return dispatch => auth.signOut();
 }
-
-

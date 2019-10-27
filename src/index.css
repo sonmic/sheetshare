@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato";
+}
+
+.navbar {
+  font-family: "Lato" !important;
+}
+
+/* unvisited link */
+a:link {
+  color: inherit !important;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: inherit !important;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: #bfdad9;
+  text-decoration: none;
+}
+
+/* selected link */
+a:active {
+  color: inherit !important;
+  text-decoration: none;
+}
+
+.MuiAppBar-colorPrimary {
+  color: #fff;
+  background-color: #fff !important;
+}
+
+/* FOR LOGO
+font-family: 'Montserrat', sans-serif;
+font-family: 'Playfair Display', serif;
+font-family: 'Cinzel', serif;
+font-family: 'Poiret One', cursive;
+font-family: 'Julius Sans One', sans-serif;
+font-family: 'Lexend Zetta', sans-serif;
+font-family: 'Nixie One', cursive; 
+*/
+
+.logotxt {
+  font-family: "Lexend Zetta", sans-serif;
+  font-size: 40px;
+  padding-top: 5%;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.logoLeft {
+  padding-top: 0%;
+}
+.logoRight {
+  padding-top: 7%;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+.logoContainer {
+  display: flex;
+}
+
+.MuiChip-avatarColorPrimary {
+  color: #888 !important;
+  background-color: #e0eeed !important;
+}
+.MuiChip-colorPrimary {
+  color: #888 !important;
+  background-color: #bfdad9 !important;
+}
