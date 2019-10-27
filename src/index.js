@@ -6,7 +6,6 @@ import rootReducer from "./reducers";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Login from "./components/Login";
 import AppBar from "./components/AppBar";
-import Header from "./routes/Header";
 import SearchBar from "./components/SearchBar";
 import AllPosts from "./components/AllPosts";
 // import LoadingComponent from './components/LoadingComponent';
@@ -27,7 +26,6 @@ ReactDOM.render(
       {/* <LoadingComponent> */}
       <div>
         <AppBar />
-        <Header />
         <div>
           <Switch>
             <Route exact path="/all" component={App} />

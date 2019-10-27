@@ -68,12 +68,20 @@ function PrimarySearchAppBar({ history, googleLogin, user, logout }) {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      <MenuItem
+        onClick={() => {
+          handleMenuClose();
+          history.push("/all");
+        }}
+      >
+        Profile
+      </MenuItem>
       <Divider />
       <MenuItem
         onClick={() => {
           handleMenuClose();
           logout();
+          history.push("/");
         }}
       >
         Log out
@@ -91,9 +99,14 @@ function PrimarySearchAppBar({ history, googleLogin, user, logout }) {
         <Toolbar>
           <Typography variant="h6" noWrap>
             <Link to="/">
-              <div className="logoLeft logotxt">SHEET</div>
-              <img className="logo" src={require("./images/musicicon03.png")} />
-              <div className="logoRight logotxt">SHARE</div>
+              <div className="logoContainer">
+                <div className="logoLeft logotxt">SHEET</div>
+                <img
+                  className="logo"
+                  src={require("./images/musicicon03.png")}
+                />
+                <div className="logoRight logotxt">SHARE</div>
+              </div>
             </Link>
           </Typography>
 
