@@ -79,3 +79,7 @@ font-family: 'Nixie One', cursive;
   color: #888 !important;
   background-color: #cadddb !important;
 }
+
+.deleteBtn {
+  float: right !important;
+}

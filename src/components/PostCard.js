@@ -10,6 +10,9 @@ import Avatar from "@material-ui/core/Avatar";
 import Chip from "@material-ui/core/Chip";
 import MusicNoteIcon from "@material-ui/icons/MusicNote";
 import QueueMusicIcon from "@material-ui/icons/QueueMusic";
+import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+import IconButton from "@material-ui/core/IconButton";
+import ClassIcon from "@material-ui/icons/Class";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -74,7 +77,7 @@ export default function MediaCard({
               clickable
             />
             <Chip
-              avatar={<Avatar>U</Avatar>}
+              avatar={<Avatar>{genre[0]}</Avatar>}
               label={genre}
               clickable
               color="primary"
@@ -92,9 +95,12 @@ export default function MediaCard({
           Learn More
         </Button>
         {onClick && (
-          <Button size="small" color="primary" onClick={onClick}>
-            Delete
-          </Button>
+          <IconButton onClick={onClick} className="deleteBtn">
+            <Button size="small" color="primary">
+              DELETE
+            </Button>
+            <DeleteForeverIcon />
+          </IconButton>
         )}
       </CardActions>
     </Card>

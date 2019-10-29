@@ -103,11 +103,7 @@ export default connect(
   };
 
   return (
-    <form
-      className={classes.container}
-      style={{ width: "80%" }}
-      onSubmit={handleSubmit}
-    >
+    <form className={classes.container} onSubmit={handleSubmit}>
       <TextField
         label="Title"
         className={classes.textField}
