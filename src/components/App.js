@@ -10,6 +10,7 @@ import {
 import PostCard from "./PostCard";
 import { getUser } from "../actions/userAction";
 import SubmitForm from "./SubmitForm";
+import Container from "@material-ui/core/Container";
 
 class App extends Component {
   constructor(props) {
@@ -51,14 +52,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-sm-12">
-            {this.props.user != null ? <SubmitForm /> : null}
-            {this.props.user != null ? this.renderPosts() : null}
-          </div>
-        </div>
-      </div>
+      <Container maxWidth="sm">
+        {this.props.user != null ? <SubmitForm /> : null}
+        {this.props.user != null ? this.renderPosts() : null}
+      </Container>
     );
   }
 }
