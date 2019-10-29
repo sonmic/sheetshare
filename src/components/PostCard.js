@@ -1,14 +1,25 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import Avatar from "@material-ui/core/Avatar";
+import Chip from "@material-ui/core/Chip";
+import MusicNoteIcon from "@material-ui/icons/MusicNote";
+import QueueMusicIcon from "@material-ui/icons/QueueMusic";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
+  root: {
+    display: "flex",
+    justifyContent: "center",
+    flexWrap: "wrap",
+    "& > *": {
+      margin: theme.spacing(0.5)
+    }
+  },
   card: {
     maxWidth: 345,
     marginTop: "30px"
@@ -16,7 +27,7 @@ const useStyles = makeStyles({
   media: {
     height: 140
   }
-});
+}));
 
 export default function MediaCard({
   title,
@@ -29,29 +40,50 @@ export default function MediaCard({
 
   return (
     <Card className={classes.card}>
-      <CardActionArea>
-        <a
-          href="https://firebasestorage.googleapis.com/v0/b/sheet-share-41538.appspot.com/o/Bohemian_Rhapsody.png?alt=media&token=d6817355-f4ee-489b-8a16-e3f86d97c75d"
-          target="_blank"
-        >
-          <CardMedia
-            className={classes.media}
-            image="https://firebasestorage.googleapis.com/v0/b/sheet-share-41538.appspot.com/o/Bohemian_Rhapsody.png?alt=media&token=d6817355-f4ee-489b-8a16-e3f86d97c75d"
-            title=""
-          />
-        </a>
+      <a
+        href="https://firebasestorage.googleapis.com/v0/b/sheet-share-41538.appspot.com/o/Bohemian_Rhapsody.png?alt=media&token=d6817355-f4ee-489b-8a16-e3f86d97c75d"
+        target="_blank"
+      >
+        <CardMedia
+          className={classes.media}
+          image="https://firebasestorage.googleapis.com/v0/b/sheet-share-41538.appspot.com/o/Bohemian_Rhapsody.png?alt=media&token=d6817355-f4ee-489b-8a16-e3f86d97c75d"
+          title=""
+        />
+      </a>
 
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {title}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            <div className="genre">{genre}</div>
-            <div className="instrument">{instrument}</div>
-            <div className="blurb">{blurb}</div>
-          </Typography>
-        </CardContent>
-      </CardActionArea>
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="h2">
+          {title}
+        </Typography>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {/* <div className="genre">{genre}</div>
+            <div className="instrument">{instrument}</div> */}
+          <div className="blurb">{blurb}</div>
+          <div className="chipsContainer">
+            <Chip
+              avatar={
+                <Avatar>
+                  {" "}
+                  <MusicNoteIcon />
+                  {/* <QueueMusicIcon /> */}
+                </Avatar>
+              }
+              label="example"
+              component="a"
+              href="#chip"
+              clickable
+            />
+            <Chip
+              avatar={<Avatar>U</Avatar>}
+              label={genre}
+              clickable
+              color="primary"
+            />
+            <Chip label={instrument} clickable color="primary" />
+          </div>
+        </Typography>
+      </CardContent>
+
       <CardActions>
         <Button size="small" color="primary">
           Share
