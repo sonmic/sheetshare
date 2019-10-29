@@ -13,6 +13,7 @@ import QueueMusicIcon from "@material-ui/icons/QueueMusic";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import IconButton from "@material-ui/core/IconButton";
 import ClassIcon from "@material-ui/icons/Class";
+import Img from 'react-image';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -37,20 +38,25 @@ export default function MediaCard({
   blurb,
   onClick,
   genre,
-  instrument
+  instrument,
+  link
 }) {
   const classes = useStyles();
+  const postImage = () => (
+    <Img src={link} crossorigin="anonymous" />
+  )
 
   return (
     <Card className={classes.card}>
       <a
-        href="https://firebasestorage.googleapis.com/v0/b/sheet-share-41538.appspot.com/o/Bohemian_Rhapsody.png?alt=media&token=d6817355-f4ee-489b-8a16-e3f86d97c75d"
+        href={link}
         target="_blank"
+        
       >
         <CardMedia
           className={classes.media}
-          image="https://firebasestorage.googleapis.com/v0/b/sheet-share-41538.appspot.com/o/Bohemian_Rhapsody.png?alt=media&token=d6817355-f4ee-489b-8a16-e3f86d97c75d"
-          title=""
+          image={link}
+          
         />
       </a>
 

@@ -29,6 +29,7 @@ class AllPosts extends Component {
         <PostCard
           key={key}
           title={post.title}
+          link={post.link}
           instrument={post.instrument}
           genre={post.genre}
           blurb={post.blurb}
