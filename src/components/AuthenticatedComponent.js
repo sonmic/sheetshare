@@ -13,7 +13,7 @@ class AuthenticatedComponent extends Component {
     }
     render(){
         const { user, userLoading, children } = this.props;
-        return (userLoading === false && user) ? this.props.history.push('/home') : null;    
+        return (userLoading === false && user) ? this.props.history.push('/home') : children;    
     }
 }
 

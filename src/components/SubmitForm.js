@@ -47,22 +47,28 @@ export default connect(
     title: "",
     blurb: "",
     instrument: "",
-    genre: ""
+    genre: "",
+    url:""
+    
   });
   const [file, setFile] = useState(null);
   const [progress, setProgress] = useState(0);
+  
 
   const handleChange = name => event => {
     setValues({ ...values, [name]: event.target.value });
   };
 
-  const uploadFile = () => {
+  
+ 
+
+  const uploadFile = (handleURLChange) => {
     console.log("Uploading", file);
     const storageRef = storage.ref("sheets/" + file.name);
 
     //upload  file
     const task = storageRef.put(file);
-
+  
     // update progress
     task.on(
       "state_changed",
@@ -76,10 +82,24 @@ export default connect(
       },
 
       function complete() {
-        console.log("File upload complere");
-      }
-    );
-  };
+        task.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+          let url = downloadURL;
+          savePosts(values,url);
+          
+          // console.log(downloadURL);
+          
+       
+
+          
+      });
+      
+      // console.log(values);
+      // savePosts(values);
+  });
+
+
+};
+
 
   // handle submit
   const handleSubmit = e => {
@@ -90,14 +110,15 @@ export default connect(
     uploadFile();
 
     // console.log(post);
-    savePosts(values);
+    // savePosts(values);
     getPosts();
 
     setValues({
       title: "",
       blurb: "",
       instrument: "",
-      genre: ""
+      genre: "",
+      url:""
     });
     setFile(null);
   };
