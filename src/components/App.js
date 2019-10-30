@@ -31,13 +31,12 @@ class App extends Component {
     this.handleDelete = this.handleDelete.bind(this);
   }
 
-  // lifecycle methods
+  //lifecycle methods
   componentDidMount() {
-    //this.props.getPosts();
     this.props.getPosts();
-    this.props.getUser();
-  }
-  //
+    this.props.getPosts();
+    this.props.getUser();  }
+  
   handleDelete(id) {
     this.props.deletePost(id);
     this.props.getPosts();
@@ -53,10 +52,10 @@ class App extends Component {
     console.log("Uploading", file);
     const storageRef = storage.ref("sheets/" + file.name);
 
-    //upload  file
+    //upload file
     const task = storageRef.put(file);
 
-    // update progress
+    //update progress
     const self = this;
     task.on(
       "state_changed",
@@ -75,7 +74,7 @@ class App extends Component {
       }
     );
   }
-  // handle submit
+  //handle submit
   handleSubmit(e) {
     e.preventDefault();
     this.uploadFile();
@@ -86,7 +85,7 @@ class App extends Component {
       genre: this.state.genre
     };
 
-    // console.log(post);
+    console.log(post);
     this.props.savePosts(post);
     this.props.getPosts();
     this.setState({

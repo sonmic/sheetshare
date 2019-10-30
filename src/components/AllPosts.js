@@ -16,16 +16,12 @@ class AllPosts extends Component {
       blurb: "",
       instrument:"",
       genre:"",
-      
-      
-      
-      
     };
     //bind
     this.renderPosts = this.renderPosts.bind(this);
   }
 
-  // lifecycle methods
+  //lifecycle methods 
   componentDidMount() {
    
    this.props.allPosts();
