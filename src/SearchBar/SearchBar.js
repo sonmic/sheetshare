@@ -37,7 +37,6 @@ class SearchBar extends React.Component {
           instrument={post.instrument}
           genre={post.genre}
           blurb={post.blurb}
-          onClick={() => this.handleDelete(key)}
           link={post.link}
         ></PostCard>
       );

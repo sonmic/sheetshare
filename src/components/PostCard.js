@@ -13,7 +13,7 @@ import QueueMusicIcon from "@material-ui/icons/QueueMusic";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import IconButton from "@material-ui/core/IconButton";
 import ClassIcon from "@material-ui/icons/Class";
-import Img from 'react-image';
+import { Document } from 'react-pdf';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -42,9 +42,6 @@ export default function MediaCard({
   link
 }) {
   const classes = useStyles();
-  const postImage = () => (
-    <Img src={link} crossorigin="anonymous" />
-  )
 
   return (
     <Card className={classes.card}>
@@ -56,7 +53,6 @@ export default function MediaCard({
         <CardMedia
           className={classes.media}
           image={link}
-          
         />
       </a>
 
