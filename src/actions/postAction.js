@@ -90,8 +90,10 @@ export function getPosts() {
     }
 }
 
-export function savePosts(post) {
+export function savePosts(post,url) {
+    post.link = url;
     const uid = auth.currentUser.uid;
+   
     //
     // console.log(uid);
     return dispatch => {

@@ -9,24 +9,14 @@ import {
 } from "../actions/postAction";
 import PostCard from "./PostCard";
 import { getUser } from "../actions/userAction";
-import { storage } from "../firebase";
-import LinearProgress from "@material-ui/core/LinearProgress";
+import SubmitForm from "./SubmitForm";
+import Container from "@material-ui/core/Container";
 
 class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      title: "",
-      blurb: "",
-      instrument: "",
-      genre: "",
-      file: null,
-      progress: 0
-    };
     //bind
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.renderPosts = this.renderPosts.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
   }
@@ -41,6 +31,7 @@ class App extends Component {
     this.props.deletePost(id);
     this.props.getPosts();
   }
+
 
   handleChange(e) {
     this.setState({
@@ -104,6 +95,7 @@ class App extends Component {
         <PostCard
           key={key}
           title={post.title}
+          link={post.link}
           instrument={post.instrument}
           genre={post.genre}
           blurb={post.blurb}
@@ -115,104 +107,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-sm-12">
-            {this.props.user != null ? (
-              <form onSubmit={this.handleSubmit}>
-                <div className="form-group">
-                  <input
-                    onChange={this.handleChange}
-                    value={this.state.title}
-                    type="text"
-                    name="title"
-                    className="form-control no-border"
-                    placeholder="Song Title..."
-                    required
-                  />
-                </div>
-                <div className="form-group">
-                  <select
-                    className="form-control"
-                    id="instrumentSelect"
-                    onChange={this.handleChange}
-                    value={this.state.instrument}
-                    name="instrument"
-                    required
-                  >
-                    <option>Select an Instrument...</option>
-                    <option>Banjo</option>
-                    <option>Bass</option>
-                    <option>Bassoon</option>
-                    <option>Cello</option>
-                    <option>Clarinet</option>
-                    <option>Drums</option>
-                    <option>Electric Bass</option>
-                    <option>Electric Guitar</option>
-                    <option>Flute</option>
-                    <option>French Horn</option>
-                    <option>Guitar</option>
-                    <option>Mandolin</option>
-                    <option>Piano</option>
-                    <option>Saxophoe</option>
-                    <option>Trumpet</option>
-                    <option>Tuba</option>
-                    <option>Ukulele</option>
-                    <option>Viola</option>
-                    <option>Violin</option>
-                  </select>
-                </div>
-                <div className="form-group">
-                  <select
-                    className="form-control"
-                    id="genreSelect"
-                    onChange={this.handleChange}
-                    value={this.state.genre}
-                    name="genre"
-                    required
-                  >
-                    <option>Select the Genre...</option>
-                    <option>Classical</option>
-                    <option>Country</option>
-                    <option>Folk</option>
-                    <option>Latino</option>
-                    <option>Jazz</option>
-                    <option>Pop</option>
-                    <option>Reggae</option>
-                    <option>Rock</option>
-                    <option>Rhythm and Blues</option>
-                    <option>Soul</option>
-                  </select>
-                </div>
-                <div className="form-group">
-                  <textarea
-                    onChange={this.handleChange}
-                    value={this.state.blurb}
-                    type="text"
-                    name="blurb"
-                    className="form-control no-border"
-                    placeholder="About this Song..."
-                    required
-                  />
-                </div>
-                <LinearProgress
-                  variant="determinate"
-                  value={this.state.progress}
-                />
-                <input
-                  type="file"
-                  name="file"
-                  onChange={e => this.setState({ file: e.target.files[0] })}
-                />
-                <div className="form-group">
-                  <button className="btn btn-primary col-sm-12">Submit</button>
-                </div>
-              </form>
-            ) : null}
-            {this.props.user != null ? this.renderPosts() : null}
-          </div>
-        </div>
-      </div>
+      <Container maxWidth="sm">
+        {this.props.user != null ? <SubmitForm /> : null}
+        {this.props.user != null ? this.renderPosts() : null}
+      </Container>
     );
   }
 }
