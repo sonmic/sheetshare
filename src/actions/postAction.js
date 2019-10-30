@@ -93,9 +93,7 @@ export function getPosts() {
 export function savePosts(post,url) {
     post.link = url;
     const uid = auth.currentUser.uid;
-   
-    //
-    // console.log(uid);
+ 
     return dispatch => {
         database.ref('/posts/'+ uid).push(post);
         database.ref('/all/').push(post);

@@ -48,7 +48,7 @@ export default connect(
     blurb: "",
     instrument: "",
     genre: "",
-    url:""
+    link:""
     
   });
   const [file, setFile] = useState(null);
@@ -84,20 +84,9 @@ export default connect(
       function complete() {
         task.snapshot.ref.getDownloadURL().then(function(downloadURL) {
           let url = downloadURL;
-          savePosts(values,url);
-          
-          // console.log(downloadURL);
-          
-       
-
-          
+          savePosts(values,url); 
       });
-      
-      // console.log(values);
-      // savePosts(values);
   });
-
-
 };
 
 
@@ -109,8 +98,6 @@ export default connect(
     }
     uploadFile();
 
-    // console.log(post);
-    // savePosts(values);
     getPosts();
 
     setValues({
@@ -118,9 +105,9 @@ export default connect(
       blurb: "",
       instrument: "",
       genre: "",
-      url:""
+      link:""
     });
-    setFile(null);
+    // setFile(null);
   };
 
   return (
