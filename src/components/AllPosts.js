@@ -10,12 +10,19 @@ class AllPosts extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+
+    this.state = {
+      title: "",
+      blurb: "",
+      instrument:"",
+      genre:"",
+    };
+
     //bind
     this.renderPosts = this.renderPosts.bind(this);
   }
 
-  // lifecycle methods
+  //lifecycle methods 
   componentDidMount() {
     this.props.allPosts();
     this.props.getUser();

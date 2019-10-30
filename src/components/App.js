@@ -21,16 +21,70 @@ class App extends Component {
     this.handleDelete = this.handleDelete.bind(this);
   }
 
-  // lifecycle methods
+  //lifecycle methods
   componentDidMount() {
-    //this.props.getPosts();
     this.props.getPosts();
-    this.props.getUser();
-  }
-  //
+    this.props.getPosts();
+    this.props.getUser();  }
+  
   handleDelete(id) {
     this.props.deletePost(id);
     this.props.getPosts();
+  }
+
+
+  handleChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  }
+  uploadFile() {
+    const { file } = this.state;
+    console.log("Uploading", file);
+    const storageRef = storage.ref("sheets/" + file.name);
+
+    //upload file
+    const task = storageRef.put(file);
+
+    //update progress
+    const self = this;
+    task.on(
+      "state_changed",
+      function progress(snapshot) {
+        const percentage =
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log("Percentage", percentage);
+        self.setState({ progress: percentage });
+      },
+      function error(err) {
+        console.log("File upload error", err);
+      },
+
+      function complete() {
+        console.log("File upload complere");
+      }
+    );
+  }
+  //handle submit
+  handleSubmit(e) {
+    e.preventDefault();
+    this.uploadFile();
+    const post = {
+      title: this.state.title,
+      blurb: this.state.blurb,
+      instrument: this.state.instrument,
+      genre: this.state.genre
+    };
+
+    console.log(post);
+    this.props.savePosts(post);
+    this.props.getPosts();
+    this.setState({
+      title: "",
+      blurb: "",
+      instrument: "",
+      genre: ""
+    });
   }
 
   //render posts

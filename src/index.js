@@ -6,7 +6,7 @@ import rootReducer from "./reducers";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Login from "./components/Login";
 import AppBar from "./components/AppBar";
-import SearchBar from "./components/SearchBar";
+import SearchBar from "./SearchBar/SearchBar";
 import AllPosts from "./components/AllPosts";
 // import LoadingComponent from './components/LoadingComponent';
 // import AuthenticatedComponent from './components/AuthenticatedComponent';

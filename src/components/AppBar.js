@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
+import { AppBar } from "@material-ui/core";
+// import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -100,12 +101,12 @@ function PrimarySearchAppBar({ history, googleLogin, user, logout }) {
           <Typography variant="h6" noWrap>
             <Link to="/">
               <div className="logoContainer">
-                <div className="logoLeft logotxt">SHEET</div>
+                <div className="logoLeft">Sheet Share</div>
                 <img
                   className="logo"
-                  src={require("./images/musicicon03.png")}
+                  src={require("./images/musicicon01.png")}
                 />
-                <div className="logoRight logotxt">SHARE</div>
+                <div className="logoRight logotxt"></div>
               </div>
             </Link>
           </Typography>
