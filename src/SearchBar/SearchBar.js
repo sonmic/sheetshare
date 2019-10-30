@@ -18,7 +18,16 @@ class SearchBar extends React.Component {
    renderPosts() {
     console.log(this.props.posts);
     return _.map(this.props.posts, (post, key) => {
-    if (this.state.name=== post.instrument ){
+
+    /*let searchterm = this.state.name;
+    let array = this.props.posts;
+    
+    const searchFilter = (searchterm, arr) => {
+      let term = searchterm.toLowerCase();
+      return this.props.posts
+    }*/
+
+    if ( this.state.name === post.instrument || this.state.name === post.title || this.state.name === post.genre ){
       
     
       return (
@@ -29,9 +38,10 @@ class SearchBar extends React.Component {
           genre={post.genre}
           blurb={post.blurb}
           onClick={() => this.handleDelete(key)}
+          link={post.link}
         ></PostCard>
       );
-    }
+    } 
     });
   }
 
@@ -60,7 +70,7 @@ class SearchBar extends React.Component {
                 this.setState({[name]:value})
             }}
           />
-          <button class="search" onClick={(event)=>{
+          <button style={{display:"none"}} class="search" onClick={(event)=>{
               event.preventDefault()
             console.log(this.state.name)
           }}type="submit">
