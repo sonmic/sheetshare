@@ -48,27 +48,23 @@ export default connect(
     blurb: "",
     instrument: "",
     genre: "",
-    link:""
-    
+    link: ""
   });
+  var submitKey = 1;
   const [file, setFile] = useState(null);
   const [progress, setProgress] = useState(0);
-  
 
   const handleChange = name => event => {
     setValues({ ...values, [name]: event.target.value });
   };
 
-  
- 
-
-  const uploadFile = (handleURLChange) => {
+  const uploadFile = handleURLChange => {
     console.log("Uploading", file);
     const storageRef = storage.ref("sheets/" + file.name);
 
     //upload  file
     const task = storageRef.put(file);
-  
+
     // update progress
     task.on(
       "state_changed",
@@ -84,11 +80,11 @@ export default connect(
       function complete() {
         task.snapshot.ref.getDownloadURL().then(function(downloadURL) {
           let url = downloadURL;
-          savePosts(values,url); 
-      });
-  });
-};
-
+          savePosts(values, url);
+        });
+      }
+    );
+  };
 
   // handle submit
   const handleSubmit = e => {
@@ -105,7 +101,7 @@ export default connect(
       blurb: "",
       instrument: "",
       genre: "",
-      link:""
+      link: ""
     });
     // setFile(null);
   };
@@ -191,6 +187,7 @@ export default connect(
 
       <LinearProgress variant="determinate" value={progress} />
       <DropzoneArea
+        key={submitKey}
         filesLimit={1}
         acceptedFiles={["image/*", "application/pdf"]}
         onChange={files => setFile(files[0])}
@@ -199,6 +196,7 @@ export default connect(
         variant="contained"
         type="submit"
         className={classes.submitButton}
+        onSubmit={submitKey++}
       >
         Submit
       </Button>
