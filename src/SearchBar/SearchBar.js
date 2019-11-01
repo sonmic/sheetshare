@@ -4,35 +4,32 @@ import PostCard from "../components/PostCard";
 import _ from "lodash";
 import "./style.css";
 import logo from "./logo192.png";
-
 import { getPosts, allPosts } from "../actions/postAction";
 import { style } from "@material-ui/system";
+
 class SearchBar extends React.Component {
-    state ={name:""}
+
+    state ={ name:"" }
+
   componentDidMount() {
-      
     this.props.allPosts();
-    console.log(this.props.posts);
+    //console.log(this.props.posts);
   }
    //render posts
    renderPosts() {
-    console.log(this.props.posts);
+
     return _.map(this.props.posts, (post, key) => {
 
-    /*let searchterm = this.state.name;
-    let array = this.props.posts;
-    
-    const searchFilter = (searchterm, arr) => {
-      let term = searchterm.toLowerCase();
-      return this.props.posts
-    }*/
     let term = this.state.name;
+    console.log(`Our search term is ${term}`);
+
+    // pattern determined by our object's data?
+    console.log("hello");
     const potentialMatches = [post.instrument, post.genre, post.title];
     const re = new RegExp(term, "i");
     window.re = re;
     if (potentialMatches.some(pm => pm.match(re))){
       
-    
       return (
         <PostCard
           key={key}
@@ -40,6 +37,7 @@ class SearchBar extends React.Component {
           instrument={post.instrument}
           genre={post.genre}
           blurb={post.blurb}
+          onClick={() => this.handleDelete(key)}
           link={post.link}
         ></PostCard>
       );
@@ -49,9 +47,10 @@ class SearchBar extends React.Component {
 
 
   render() {
-      console.log(this.props)
-    
+      
+    console.log(this.props)
     console.log(this.state)
+
     return (
       <div>
       <div class="logo-parent">
@@ -72,7 +71,7 @@ class SearchBar extends React.Component {
                 this.setState({[name]:value})
             }}
           />
-          <button style={{display:"none"}} class="search" onClick={(event)=>{
+          <button class="search" onClick={(event)=>{
               event.preventDefault()
             console.log(this.state.name)
           }}type="submit">
