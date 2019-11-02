@@ -101,10 +101,10 @@ function PrimarySearchAppBar({ history, googleLogin, user, logout }) {
           <Typography variant="h6" noWrap>
             <Link to="/">
               <div className="logoContainer">
-                <div className="logoLeft">Sheet Share</div>
+                <div className="logoLeft"></div>
                 <img
                   className="logo"
-                  src={require("./images/musicicon01.png")}
+                  src={require("./images/headerlogo.png")}
                 />
                 <div className="logoRight logotxt"></div>
               </div>
