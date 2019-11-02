@@ -4,7 +4,7 @@ import PostCard from "../components/PostCard";
 import _ from "lodash";
 import "./style.css";
 import logo from "./logo192.png";
-
+import Container from '@material-ui/core/Container'
 import { getPosts, allPosts } from "../actions/postAction";
 import { style } from "@material-ui/system";
 class SearchBar extends React.Component {
@@ -18,7 +18,6 @@ class SearchBar extends React.Component {
    renderPosts() {
     console.log(this.props.posts);
     return _.map(this.props.posts, (post, key) => {
-
     /*let searchterm = this.state.name;
     let array = this.props.posts;
     
@@ -46,24 +45,15 @@ class SearchBar extends React.Component {
     } 
     });
   }
-
-
-  render() {
-      console.log(this.props)
-    
-    console.log(this.state)
-    return (
-      <div>
-      <div class="logo-parent">
-        <img src={logo} class="logo-child"/>
+  renderSearchBar() {
+      return(
+        
         <form class="form-inline my-2 my-lg-0">
-
           <input
             class="form-control mr-sm-2"
             type="search"
             placeholder="Search"
             aria-label="Search"
-
             name= "name"
             onChange={(event)=>{
                 event.preventDefault()
@@ -72,17 +62,21 @@ class SearchBar extends React.Component {
                 this.setState({[name]:value})
             }}
           />
-          <button style={{display:"none"}} class="search" onClick={(event)=>{
-              event.preventDefault()
-            console.log(this.state.name)
-          }}type="submit">
-            Search
-          </button>
+     
         </form>
+      )
+  }
+  render() {
+      
+    return (
+      <Container style={{alignContent:"center"}}>
+          <div class="logo-parent">
+        <img src={logo} class="logo-child"/>
         </div>
+        {this.renderSearchBar()}
         {this.props.posts != null ? this.renderPosts() : null}
-         
-      </div>
+      </Container>
+     
     );
   }
 }
@@ -91,7 +85,6 @@ function mapStateToProps(state, ownProps) {
     posts: state.posts
   };
 }
-
 export default connect(
   mapStateToProps,
   { allPosts, getPosts }

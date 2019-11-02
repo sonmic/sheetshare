@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Lato";
+ 
 }
 
 .navbar {
@@ -46,10 +47,12 @@ font-family: 'Julius Sans One', sans-serif;
 font-family: 'Lexend Zetta', sans-serif;
 font-family: 'Nixie One', cursive; 
 */
-
+logo-child{
+  width: 200
+}
 .logotxt {
   font-family: "Lexend Zetta", sans-serif;
-  font-size: 40px;
+  font-size: 60px;
   padding-top: 5%;
   text-transform: uppercase;
   color: #000;
@@ -61,11 +64,11 @@ font-family: 'Nixie One', cursive;
 .logoRight {
   padding-top: 7%;
 }
-
-.logo {
-  width: 100px;
-  height: 100px;
+.logo-child{
+  width: 30px;
+  
 }
+
 
 .logoContainer {
   display: flex;
@@ -77,9 +80,33 @@ font-family: 'Nixie One', cursive;
 }
 .MuiChip-colorPrimary {
   color: #888 !important;
-  background-color: #cadddb !important;
+  background-color: #d5dfde !important;
 }
 
 .deleteBtn {
   float: right !important;
 }
+.MuiCard-root {
+  display:inline-grid; 
+  margin: 15px;
+  
+  }
+  .parent-container{
+  margin: 15px;
+  }
+  .MuiPaper-root {
+      background-color: rgb(7, 3, 3) !important;
+     }
+    
+     .MuiSvgIcon-root {
+       color: goldenrod;
+     }
+   .logo{
+    transition-delay: 4ms
+   }
+   span.MuiBottomNavigationAction-label {
+    color:goldenrod;
+  }
+  span.MuiButton-label {
+    color:goldenrod;
+  }

@@ -46,7 +46,7 @@ class AllPosts extends Component {
   }
 
   render() {
-    return <Container maxWidth="sm">{this.renderPosts()}</Container>;
+    return <Container maxWidth="lg">{this.renderPosts()}</Container>;
   }
 }
 
