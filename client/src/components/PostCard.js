@@ -25,16 +25,17 @@ const useStyles = makeStyles(theme => ({
     }
   },
   card: {
-    width: 300,
-    margin:"2px",
+    width: 275,
+    margin:"10px",
     display:"inline-block",
-    height:300,
+    height:350,
+    
     
     
     
   },
   media: {
-    height: 140
+    height: 100
   }
 }));
 
@@ -62,15 +63,15 @@ export default function MediaCard({
       </a>
 
       <CardContent>
-        <Typography gutterBottom variant="h5" component="h2">
+        <Typography style={{color:"goldenrod"}}gutterBottom variant="h5" component="h2">
           {title}
         </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
+        <Typography style={{color:"goldenrod"}} variant="body2" color="textSecondary" component="p">
           {/* <div className="genre">{genre}</div>
             <div className="instrument">{instrument}</div> */}
           <div className="blurb">{blurb}</div>
           <div className="chipsContainer">
-            <Chip
+            <Chip style={{margin:"5px"}}
               avatar={
                 <Avatar>
                   {" "}
@@ -83,7 +84,7 @@ export default function MediaCard({
               href="#chip"
               clickable
             />
-            <Chip
+            <Chip style={{marginRight:"5px"}}
               avatar={<Avatar>{genre[0]}</Avatar>}
               label={genre}
               clickable
