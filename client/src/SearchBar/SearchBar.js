@@ -72,8 +72,9 @@ class SearchBar extends React.Component {
       <Container style={{alignContent:"center"}}>
           <div class="logo-parent">
         <img src={logo} class="logo-child"/>
-        </div>
         {this.renderSearchBar()}
+        </div>
+        
         {this.props.posts != null ? this.renderPosts() : null}
       </Container>
      
