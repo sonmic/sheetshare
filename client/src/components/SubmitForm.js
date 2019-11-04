@@ -127,25 +127,25 @@ export default connect(
             id: "instrument"
           }}
         >
-          <MenuItem value="Banjo">Banjo</MenuItem>
-          <MenuItem value="Bass">Bass</MenuItem>
-          <MenuItem value="Bassoon">Bassoon</MenuItem>
-          <MenuItem value="Cello">Cello</MenuItem>
-          <MenuItem value="Clarinet">Clarinet</MenuItem>
-          <MenuItem value="Drums">Drums</MenuItem>
-          <MenuItem value="Electric Bass">Electric Bass</MenuItem>
-          <MenuItem value="Electric Guitar">Electric Guitar</MenuItem>
-          <MenuItem value="Flute">Flute</MenuItem>
-          <MenuItem value="French Horn">French Horn</MenuItem>
-          <MenuItem value="Guitar">Guitar</MenuItem>
-          <MenuItem value="Mandolin">Mandolin</MenuItem>
-          <MenuItem value="Piano">Piano</MenuItem>
-          <MenuItem value="Saxophone">Saxophone</MenuItem>
-          <MenuItem value="Trumpet">Trumpet</MenuItem>
-          <MenuItem value="Tuba">Tuba</MenuItem>
-          <MenuItem value="Ukulele">Ukulele</MenuItem>
-          <MenuItem value="Viola">Viola</MenuItem>
-          <MenuItem value="Violin">Violin</MenuItem>
+          <MenuItem value="Banjo" style={{ color: 'white' }} >Banjo</MenuItem>
+          <MenuItem value="Bass" style={{ color: 'white' }} >Bass</MenuItem>
+          <MenuItem value="Bassoon" style={{ color: 'white' }} >Bassoon</MenuItem>
+          <MenuItem value="Cello" style={{ color: 'white' }} >Cello</MenuItem>
+          <MenuItem value="Clarinet" style={{ color: 'white' }} >Clarinet</MenuItem>
+          <MenuItem value="Drums" style={{ color: 'white' }} >Drums</MenuItem>
+          <MenuItem value="Electric Bass" style={{ color: 'white' }} >Electric Bass</MenuItem>
+          <MenuItem value="Electric Guitar" style={{ color: 'white' }} >Electric Guitar</MenuItem>
+          <MenuItem value="Flute" style={{ color: 'white' }} >Flute</MenuItem>
+          <MenuItem value="French Horn" style={{ color: 'white' }} >French Horn</MenuItem>
+          <MenuItem value="Guitar" style={{ color: 'white' }} >Guitar</MenuItem>
+          <MenuItem value="Mandolin" style={{ color: 'white' }} >Mandolin</MenuItem>
+          <MenuItem value="Piano" style={{ color: 'white' }} >Piano</MenuItem>
+          <MenuItem value="Saxophone" style={{ color: 'white' }} >Saxophone</MenuItem>
+          <MenuItem value="Trumpet" style={{ color: 'white' }} >Trumpet</MenuItem>
+          <MenuItem value="Tuba" style={{ color: 'white' }} >Tuba</MenuItem>
+          <MenuItem value="Ukulele" style={{ color: 'white' }} >Ukulele</MenuItem>
+          <MenuItem value="Viola" style={{ color: 'white' }} >Viola</MenuItem>
+          <MenuItem value="Violin" style={{ color: 'white' }} >Violin</MenuItem>
         </Select>
       </FormControl>
       <FormControl className={classes.formControl} fullWidth required>
@@ -158,16 +158,16 @@ export default connect(
             id: "genre"
           }}
         >
-          <MenuItem value="Classical">Classical</MenuItem>
-          <MenuItem value="Country">Country</MenuItem>
-          <MenuItem value="Folk">Folk</MenuItem>
-          <MenuItem value="Latino">Latino</MenuItem>
-          <MenuItem value="Jazz">Jazz</MenuItem>
-          <MenuItem value="Pop">Pop</MenuItem>
-          <MenuItem value="Reggae">Reggae</MenuItem>
-          <MenuItem value="Rock">Rock</MenuItem>
-          <MenuItem value="Rhythm and Blues">Rhythm and Blues</MenuItem>
-          <MenuItem value="Soul">Soul</MenuItem>
+          <MenuItem value="Classical" style={{ color: 'white' }} >Classical</MenuItem>
+          <MenuItem value="Country" style={{ color: 'white' }} >Country</MenuItem>
+          <MenuItem value="Folk" style={{ color: 'white' }} >Folk</MenuItem>
+          <MenuItem value="Latino" style={{ color: 'white' }} >Latino</MenuItem>
+          <MenuItem value="Jazz" style={{ color: 'white' }} >Jazz</MenuItem>
+          <MenuItem value="Pop" style={{ color: 'white' }} >Pop</MenuItem>
+          <MenuItem value="Reggae" style={{ color: 'white' }} >Reggae</MenuItem>
+          <MenuItem value="Rock" style={{ color: 'white' }} >Rock</MenuItem>
+          <MenuItem value="Rhythm and Blues" style={{ color: 'white' }} >Rhythm and Blues</MenuItem>
+          <MenuItem value="Soul" style={{ color: 'white' }} >Soul</MenuItem>
         </Select>
       </FormControl>
       <TextField

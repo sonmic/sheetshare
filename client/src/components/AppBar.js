@@ -80,7 +80,7 @@ function PrimarySearchAppBar({ history, googleLogin, user, logout }) {
           handleMenuClose();
           history.push("/all");
         }}
-      >
+        style={{ color: 'white' }} >
         Profile
       </MenuItem>
       <Divider />
@@ -90,7 +90,7 @@ function PrimarySearchAppBar({ history, googleLogin, user, logout }) {
           logout();
           history.push("/");
         }}
-      >
+        style={{ color: 'white' }} >
         Log out
       </MenuItem>
     </Menu>
