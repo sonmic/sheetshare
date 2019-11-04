@@ -14,6 +14,7 @@ import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { googleLogin, getUser, logout } from "../actions/userAction";
+import Avatar from "@material-ui/core/Avatar";
 
 const useStyles = makeStyles(theme => ({
   grow: {
@@ -41,6 +42,11 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up("md")]: {
       width: 200
     }
+  },
+  avatar: {
+    margin: 10,
+    width: 30,
+    height: 30
   }
 }));
 
@@ -91,7 +97,19 @@ function PrimarySearchAppBar({ history, googleLogin, user, logout }) {
   );
   const getGreeting = () => {
     const { displayName } = user;
+    console.log(user);
     return displayName ? `Hi, ${user.displayName}!` : "Hi!";
+  };
+  const getAvatar = () => {
+    if (user) {
+      const { photoURL, displayName } = user;
+      if (photoURL) {
+        return (
+          <Avatar alt={displayName} src={photoURL} className={classes.avatar} />
+        );
+      }
+    }
+    return <AccountCircle />;
   };
 
   return (
@@ -118,10 +136,9 @@ function PrimarySearchAppBar({ history, googleLogin, user, logout }) {
             showLabel
             onClick={() => history.push("/search")}
           />
-          {console.log("User:", user)}
           <BottomNavigationAction
             label={user ? getGreeting() : "Login"}
-            icon={<AccountCircle />}
+            icon={getAvatar()}
             showLabel
             aria-controls={menuId}
             aria-haspopup="true"
