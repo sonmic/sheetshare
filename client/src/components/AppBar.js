@@ -80,7 +80,7 @@ function PrimarySearchAppBar({ history, googleLogin, user, logout }) {
           handleMenuClose();
           history.push("/all");
         }}
-        style={{ color: 'white' }} >
+        style={{ color: 'goldenrod' }} >
         Profile
       </MenuItem>
       <Divider />
@@ -90,14 +90,14 @@ function PrimarySearchAppBar({ history, googleLogin, user, logout }) {
           logout();
           history.push("/");
         }}
-        style={{ color: 'white' }} >
+        style={{ color: 'goldenrod' }} >
         Log out
       </MenuItem>
     </Menu>
   );
   const getGreeting = () => {
     const { displayName } = user;
-    console.log(user);
+    // console.log(user);
     return displayName ? `Hi, ${user.displayName}!` : "Hi!";
   };
   const getAvatar = () => {

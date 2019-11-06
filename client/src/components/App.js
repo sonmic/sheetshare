@@ -77,7 +77,7 @@ class App extends Component {
       genre: this.state.genre
     };
 
-    console.log(post);
+    // console.log(post);
     this.props.savePosts(post);
     
     this.setState({
@@ -91,7 +91,7 @@ class App extends Component {
 
   //render posts
   renderPosts() {
-    console.log(this.props.posts);
+    // console.log(this.props.posts);
     return _.map(this.props.posts, (post, key) => {
       return (
         <PostCard
