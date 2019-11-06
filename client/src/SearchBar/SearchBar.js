@@ -50,7 +50,7 @@ class SearchBar extends React.Component {
         
         <form class="form-inline my-2 my-lg-0">
           <input
-            class="form-control mr-sm-2"
+            class="form-control mr-lg-3"
             type="search"
             placeholder="Search"
             aria-label="Search"

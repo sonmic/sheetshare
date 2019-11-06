@@ -21,6 +21,7 @@
   "dependencies": {
     "express": "^4.16.3",
     "i": "^0.3.6",
-    "if-env": "^1.0.4"
+    "if-env": "^1.0.4",
+    "react-native-linear-gradient": "^2.5.6"
   }
 }

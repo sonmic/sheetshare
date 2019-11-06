@@ -11,6 +11,7 @@ import Select from "@material-ui/core/Select";
 import Button from "@material-ui/core/Button";
 import { connect } from "react-redux";
 import { getPosts, savePosts } from "../actions/postAction";
+import "./style.css";
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -34,6 +35,9 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(1),
     marginBottom: theme.spacing(1),
     marginTop: theme.spacing(3)
+  },
+  goldenrod:{
+    color:"goldenrod"
   }
 }));
 
@@ -126,26 +130,28 @@ export default connect(
             name: "instrument",
             id: "instrument"
           }}
+         
         >
-          <MenuItem value="Banjo">Banjo</MenuItem>
-          <MenuItem value="Bass">Bass</MenuItem>
-          <MenuItem value="Bassoon">Bassoon</MenuItem>
-          <MenuItem value="Cello">Cello</MenuItem>
-          <MenuItem value="Clarinet">Clarinet</MenuItem>
-          <MenuItem value="Drums">Drums</MenuItem>
-          <MenuItem value="Electric Bass">Electric Bass</MenuItem>
-          <MenuItem value="Electric Guitar">Electric Guitar</MenuItem>
-          <MenuItem value="Flute">Flute</MenuItem>
-          <MenuItem value="French Horn">French Horn</MenuItem>
-          <MenuItem value="Guitar">Guitar</MenuItem>
-          <MenuItem value="Mandolin">Mandolin</MenuItem>
-          <MenuItem value="Piano">Piano</MenuItem>
-          <MenuItem value="Saxophone">Saxophone</MenuItem>
-          <MenuItem value="Trumpet">Trumpet</MenuItem>
-          <MenuItem value="Tuba">Tuba</MenuItem>
-          <MenuItem value="Ukulele">Ukulele</MenuItem>
-          <MenuItem value="Viola">Viola</MenuItem>
-          <MenuItem value="Violin">Violin</MenuItem>
+          
+          <MenuItem  className={classes.goldenrod} value="Banjo">Banjo</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Bass">Bass</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Bassoon">Bassoon</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Cello">Cello</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Clarinet">Clarinet</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Drums">Drums</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Electric Bass">Electric Bass</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Electric Guitar">Electric Guitar</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Flute">Flute</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="French Horn">French Horn</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Guitar">Guitar</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Mandolin">Mandolin</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Piano">Piano</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Saxophone">Saxophone</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Trumpet">Trumpet</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Tuba">Tuba</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Ukulele">Ukulele</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Viola">Viola</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Violin">Violin</MenuItem>
         </Select>
       </FormControl>
       <FormControl className={classes.formControl} fullWidth required>
@@ -158,16 +164,16 @@ export default connect(
             id: "genre"
           }}
         >
-          <MenuItem value="Classical">Classical</MenuItem>
-          <MenuItem value="Country">Country</MenuItem>
-          <MenuItem value="Folk">Folk</MenuItem>
-          <MenuItem value="Latino">Latino</MenuItem>
-          <MenuItem value="Jazz">Jazz</MenuItem>
-          <MenuItem value="Pop">Pop</MenuItem>
-          <MenuItem value="Reggae">Reggae</MenuItem>
-          <MenuItem value="Rock">Rock</MenuItem>
-          <MenuItem value="Rhythm and Blues">Rhythm and Blues</MenuItem>
-          <MenuItem value="Soul">Soul</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Classical">Classical</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Country">Country</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Folk">Folk</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Latino">Latino</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Jazz">Jazz</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Pop">Pop</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Reggae">Reggae</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Rock">Rock</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Rhythm and Blues">Rhythm and Blues</MenuItem>
+          <MenuItem  className={classes.goldenrod} value="Soul">Soul</MenuItem>
         </Select>
       </FormControl>
       <TextField

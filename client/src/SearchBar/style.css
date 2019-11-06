@@ -1,14 +1,21 @@
+.goldenrod {
+    color: aliceblue;
+}
 
 .logo-parent{
-   display: flex; 
-   justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-bottom: 20px;
-  padding-top: 30px;
-  
-}
-.logo-child{
-   margin-bottom: 10px;
-}
-
+    display: flex; 
+    justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   padding-bottom:40px;
+   padding-top: 30px;
+   
+ }
+ .logo-child{
+    margin-bottom: 10px;
+ }
+.form-control {
+width: 200px;
+border:2px solid goldenrod;
+padding: 5px;
+ }

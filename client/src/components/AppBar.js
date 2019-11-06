@@ -18,6 +18,7 @@ import { googleLogin, getUser, logout } from "../actions/userAction";
 const useStyles = makeStyles(theme => ({
   grow: {
     flexGrow: 1
+    
   },
   menuButton: {
     marginRight: theme.spacing(2)
@@ -100,13 +101,16 @@ function PrimarySearchAppBar({ history, googleLogin, user, logout }) {
         <Toolbar>
           <Typography variant="h6" noWrap>
             <Link to="/">
-              <div className="logoContainer">
-                <div className="logoLeft"></div>
+              <div className="logo">
+              <div>
+                <img className="logo" src={require("./images/justlogo.png")} />
+              </div>
+              <div>
                 <img
-                  className="logo"
-                  src={require("./images/headerlogo.png")}
+                  className="logo-sheet"
+                  src={require("./images/sheetshare.png")}
                 />
-                <div className="logoRight logotxt"></div>
+              </div>
               </div>
             </Link>
           </Typography>

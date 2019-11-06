@@ -1,0 +1,14 @@
+
+.logo-parent{
+   display: flex; 
+   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 20px;
+  padding-top: 30px;
+  
+}
+.logo-child{
+   margin-bottom: 10px;
+}
+
