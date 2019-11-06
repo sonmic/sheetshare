@@ -30,7 +30,7 @@ class AllPosts extends Component {
 
   //render posts
   renderPosts() {
-    console.log(this.props.posts);
+    // console.log(this.props.posts);
     return _.map(this.props.posts, (post, key) => {
       return (
         <PostCard

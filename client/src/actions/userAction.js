@@ -6,10 +6,10 @@ export function googleLogin() {
     auth
       .signInWithPopup(googleProvider)
       .then(function(result) {
-        console.log(result.user);
+        // console.log(result.user);
       })
       .catch(function(error) {
-        console.log(error);
+        // console.log(error);
       });
   };
 }
@@ -17,7 +17,7 @@ export function googleLogin() {
 export function getUser() {
   return dispatch => {
     auth.onAuthStateChanged(user => {
-      console.log("onAuthStateChanged", user);
+      // console.log("onAuthStateChanged", user);
       dispatch({
         type: GET_USER,
         payload: user

@@ -13,7 +13,7 @@ export function allPosts () {
             const allPosts = database.ref('/all/');
 
             allPosts.on('value', function (childSnapshot){
-                 console.log(childSnapshot.val());
+                //  console.log(childSnapshot.val());
                  dispatch({
                     type: GET_POSTS,
                     payload: childSnapshot.val()
@@ -43,14 +43,14 @@ export function getPosts() {
         });
         auth.onAuthStateChanged(userId => {
              userId = userId.uid;
-             console.log(userId);
+            //  console.log(userId);
              const readPosts = database.ref('/posts/' + userId);
              //const allPosts = database.ref('/posts/');
             // allPosts.on('child_added', function (childSnapshot){
              //    console.log(childSnapshot.val());
              //});
              readPosts.on('value', function(childSnapshot) { 
-                console.log(childSnapshot.val());
+                // console.log(childSnapshot.val());
                 dispatch({
                     type: GET_POSTS,
                     payload: childSnapshot.val()
@@ -68,25 +68,6 @@ export function getPosts() {
                 });
             });
         });
-        // const readPosts = database.ref('/posts/');
-        // readPosts.on('child_added', function(childSnapshot) { 
-        //     // console.log(childSnapshot.val());
-        //     dispatch({
-        //         type: GET_POSTS,
-        //         payload: childSnapshot.val()
-        //     });
-        //     //once posts received loading to false
-        //     dispatch({
-        //         type:POSTS_STATUS,
-        //         payload:false
-        //     });
-        //     // 
-        // },() => {
-        //     dispatch({
-        //         type:POSTS_STATUS,
-        //         payload: -1
-        //     });
-        // });
     }
 }
 
