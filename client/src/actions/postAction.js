@@ -1,4 +1,4 @@
-import { GET_POSTS, POSTS_STATUS } from '../actionTypes';
+import { GET_POSTS, POSTS_STATUS, GET_APOSTS } from '../actionTypes';
 import { auth, database } from '../firebase';
 
 export function allPosts () {
@@ -15,7 +15,7 @@ export function allPosts () {
             allPosts.on('value', function (childSnapshot){
                 //  console.log(childSnapshot.val());
                  dispatch({
-                    type: GET_POSTS,
+                    type: GET_APOSTS,
                     payload: childSnapshot.val()
                 });
             

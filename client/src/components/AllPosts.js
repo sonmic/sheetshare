@@ -31,7 +31,7 @@ class AllPosts extends Component {
   //render posts
   renderPosts() {
     // console.log(this.props.posts);
-    return _.map(this.props.posts, (post, key) => {
+    return _.map(this.props.aPosts, (post, key) => {
       return (
         <PostCard
           key={key}
@@ -52,7 +52,7 @@ class AllPosts extends Component {
 
 function mapStateToProps(state, ownProps) {
   return {
-    posts: state.posts,
+    aPosts: state.aPosts,
     user: state.user
   };
 }
