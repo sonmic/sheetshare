@@ -127,25 +127,63 @@ export default connect(
             id: "instrument"
           }}
         >
-          <MenuItem value="Banjo" style={{ color: 'goldenrod' }} >Banjo</MenuItem>
-          <MenuItem value="Bass" style={{ color: 'goldenrod' }} >Bass</MenuItem>
-          <MenuItem value="Bassoon" style={{ color: 'goldenrod' }} >Bassoon</MenuItem>
-          <MenuItem value="Cello" style={{ color: 'goldenrod' }} >Cello</MenuItem>
-          <MenuItem value="Clarinet" style={{ color: 'goldenrod' }} >Clarinet</MenuItem>
-          <MenuItem value="Drums" style={{ color: 'goldenrod' }} >Drums</MenuItem>
-          <MenuItem value="Electric Bass" style={{ color: 'goldenrod' }} >Electric Bass</MenuItem>
-          <MenuItem value="Electric Guitar" style={{ color: 'goldenrod' }} >Electric Guitar</MenuItem>
-          <MenuItem value="Flute" style={{ color: 'goldenrod' }} >Flute</MenuItem>
-          <MenuItem value="French Horn" style={{ color: 'goldenrod' }} >French Horn</MenuItem>
-          <MenuItem value="Guitar" style={{ color: 'goldenrod' }} >Guitar</MenuItem>
-          <MenuItem value="Mandolin" style={{ color: 'goldenrod' }} >Mandolin</MenuItem>
-          <MenuItem value="Piano" style={{ color: 'goldenrod' }} >Piano</MenuItem>
-          <MenuItem value="Saxophone" style={{ color: 'goldenrod' }} >Saxophone</MenuItem>
-          <MenuItem value="Trumpet" style={{ color: 'goldenrod' }} >Trumpet</MenuItem>
-          <MenuItem value="Tuba" style={{ color: 'goldenrod' }} >Tuba</MenuItem>
-          <MenuItem value="Ukulele" style={{ color: 'goldenrod' }} >Ukulele</MenuItem>
-          <MenuItem value="Viola" style={{ color: 'goldenrod' }} >Viola</MenuItem>
-          <MenuItem value="Violin" style={{ color: 'goldenrod' }} >Violin</MenuItem>
+          <MenuItem value="Banjo" style={{ color: "goldenrod" }}>
+            Banjo
+          </MenuItem>
+          <MenuItem value="Bass" style={{ color: "goldenrod" }}>
+            Bass
+          </MenuItem>
+          <MenuItem value="Bassoon" style={{ color: "goldenrod" }}>
+            Bassoon
+          </MenuItem>
+          <MenuItem value="Cello" style={{ color: "goldenrod" }}>
+            Cello
+          </MenuItem>
+          <MenuItem value="Clarinet" style={{ color: "goldenrod" }}>
+            Clarinet
+          </MenuItem>
+          <MenuItem value="Drums" style={{ color: "goldenrod" }}>
+            Drums
+          </MenuItem>
+          <MenuItem value="Electric Bass" style={{ color: "goldenrod" }}>
+            Electric Bass
+          </MenuItem>
+          <MenuItem value="Electric Guitar" style={{ color: "goldenrod" }}>
+            Electric Guitar
+          </MenuItem>
+          <MenuItem value="Flute" style={{ color: "goldenrod" }}>
+            Flute
+          </MenuItem>
+          <MenuItem value="French Horn" style={{ color: "goldenrod" }}>
+            French Horn
+          </MenuItem>
+          <MenuItem value="Guitar" style={{ color: "goldenrod" }}>
+            Guitar
+          </MenuItem>
+          <MenuItem value="Mandolin" style={{ color: "goldenrod" }}>
+            Mandolin
+          </MenuItem>
+          <MenuItem value="Piano" style={{ color: "goldenrod" }}>
+            Piano
+          </MenuItem>
+          <MenuItem value="Saxophone" style={{ color: "goldenrod" }}>
+            Saxophone
+          </MenuItem>
+          <MenuItem value="Trumpet" style={{ color: "goldenrod" }}>
+            Trumpet
+          </MenuItem>
+          <MenuItem value="Tuba" style={{ color: "goldenrod" }}>
+            Tuba
+          </MenuItem>
+          <MenuItem value="Ukulele" style={{ color: "goldenrod" }}>
+            Ukulele
+          </MenuItem>
+          <MenuItem value="Viola" style={{ color: "goldenrod" }}>
+            Viola
+          </MenuItem>
+          <MenuItem value="Violin" style={{ color: "goldenrod" }}>
+            Violin
+          </MenuItem>
         </Select>
       </FormControl>
       <FormControl className={classes.formControl} fullWidth required>
@@ -158,16 +196,36 @@ export default connect(
             id: "genre"
           }}
         >
-          <MenuItem value="Classical" style={{ color: 'goldenrod' }} >Classical</MenuItem>
-          <MenuItem value="Country" style={{ color: 'goldenrod' }} >Country</MenuItem>
-          <MenuItem value="Folk" style={{ color: 'goldenrod' }} >Folk</MenuItem>
-          <MenuItem value="Latino" style={{ color: 'goldenrod' }} >Latino</MenuItem>
-          <MenuItem value="Jazz" style={{ color: 'goldenrod' }} >Jazz</MenuItem>
-          <MenuItem value="Pop" style={{ color: 'goldenrod' }} >Pop</MenuItem>
-          <MenuItem value="Reggae" style={{ color: 'goldenrod' }} >Reggae</MenuItem>
-          <MenuItem value="Rock" style={{ color: 'goldenrod' }} >Rock</MenuItem>
-          <MenuItem value="Rhythm and Blues" style={{ color: 'goldenrod' }} >Rhythm and Blues</MenuItem>
-          <MenuItem value="Soul" style={{ color: 'goldenrod' }} >Soul</MenuItem>
+          <MenuItem value="Classical" style={{ color: "goldenrod" }}>
+            Classical
+          </MenuItem>
+          <MenuItem value="Country" style={{ color: "goldenrod" }}>
+            Country
+          </MenuItem>
+          <MenuItem value="Folk" style={{ color: "goldenrod" }}>
+            Folk
+          </MenuItem>
+          <MenuItem value="Latino" style={{ color: "goldenrod" }}>
+            Latino
+          </MenuItem>
+          <MenuItem value="Jazz" style={{ color: "goldenrod" }}>
+            Jazz
+          </MenuItem>
+          <MenuItem value="Pop" style={{ color: "goldenrod" }}>
+            Pop
+          </MenuItem>
+          <MenuItem value="Reggae" style={{ color: "goldenrod" }}>
+            Reggae
+          </MenuItem>
+          <MenuItem value="Rock" style={{ color: "goldenrod" }}>
+            Rock
+          </MenuItem>
+          <MenuItem value="Rhythm and Blues" style={{ color: "goldenrod" }}>
+            Rhythm and Blues
+          </MenuItem>
+          <MenuItem value="Soul" style={{ color: "goldenrod" }}>
+            Soul
+          </MenuItem>
         </Select>
       </FormControl>
       <TextField
@@ -187,6 +245,7 @@ export default connect(
 
       <LinearProgress variant="determinate" value={progress} />
       <DropzoneArea
+        className="dropzoneCSS"
         key={submitKey}
         filesLimit={1}
         acceptedFiles={["image/*", "application/pdf"]}
