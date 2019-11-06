@@ -24,9 +24,9 @@ class App extends Component {
 
   //lifecycle methods
   componentDidMount() {
+    this.props.getUser();
     this.props.getPosts();
-    this.props.getPosts();
-    this.props.getUser();  }
+      }
   
   handleDelete(id) {
     this.props.deletePost(id);
@@ -79,13 +79,14 @@ class App extends Component {
 
     console.log(post);
     this.props.savePosts(post);
-    this.props.getPosts();
+    
     this.setState({
       title: "",
       blurb: "",
       instrument: "",
       genre: ""
     });
+    this.props.getPosts();
   }
 
   //render posts
