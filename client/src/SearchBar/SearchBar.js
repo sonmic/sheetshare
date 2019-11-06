@@ -69,7 +69,7 @@ class SearchBar extends React.Component {
   render() {
       
     return (
-      <Container  maxWidth="100%"style={{align:"center", backgroundColor:"black"}}>
+      <Container  maxWidth="lg"style={{align:"center", backgroundColor:"black"}}>
           <div className="logo-parent">
         <img src={logo} className="logo-child"/>
         {this.renderSearchBar()}
