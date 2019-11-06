@@ -13,8 +13,8 @@ import QueueMusicIcon from "@material-ui/icons/QueueMusic";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import IconButton from "@material-ui/core/IconButton";
 import ClassIcon from "@material-ui/icons/Class";
-import { Document, Page } from 'react-pdf';
-import { pdfjs } from 'react-pdf';
+import { Document, Page } from "react-pdf";
+import { pdfjs } from "react-pdf";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 const useStyles = makeStyles(theme => ({
   root: {
@@ -27,13 +27,9 @@ const useStyles = makeStyles(theme => ({
   },
   card: {
     width: 275,
-    margin:"10px",
-    display:"inline-block",
-    height:350,
-    
-    
-    
-    
+    margin: "10px",
+    display: "inline-block",
+    height: 350
   },
   media: {
     height: 175
@@ -52,50 +48,42 @@ export default function MediaCard({
   const endsWithPdf = new URL(link).pathname.endsWith(".pdf");
   return (
     <Card className={classes.card}>
-      <a
-        href={link}
-        target="_blank"
-        
-      >
+      <a href={link} target="_blank">
         <CardMedia
           className={classes.media}
-          style={{position: 'relative',zIndex: 0}}
+          style={{ position: "relative", zIndex: 0 }}
         >
-          {
-            endsWithPdf
-            ? (<Document
-            file={link}>
-              <Page 
-              pageNumber={1}
-              width={275} />
-            </Document>)
-            : (<img style={{width: 275}}src={link} alt="preview"/>)
-          }
-          
+          {endsWithPdf ? (
+            <Document file={link}>
+              <Page pageNumber={1} width={275} />
+            </Document>
+          ) : (
+            <img style={{ width: 275 }} src={link} alt="preview" />
+          )}
         </CardMedia>
       </a>
 
       <CardContent
-      style={{position: 'relative',zIndex: 1, backgroundColor: '#353432'}}>
-        <Typography style={{color:"goldenrod"}}gutterBottom variant="h5" component="h2">
+        style={{ position: "relative", zIndex: 1, backgroundColor: "#353432" }}
+      >
+        <Typography
+          style={{ color: "goldenrod" }}
+          gutterBottom
+          variant="h5"
+          component="h2"
+        >
           {title}
         </Typography>
-        <Typography style={{color:"goldenrod"}} variant="body2" color="textSecondary" component="div">
+        <Typography
+          style={{ color: "goldenrod" }}
+          variant="body2"
+          color="textSecondary"
+          component="div"
+        >
           <div className="blurb">{blurb}</div>
           <div className="chipsContainer">
-            <Chip style={{margin:"5px"}}
-              avatar={
-                <Avatar>
-                  {" "}
-                  <MusicNoteIcon />
-                </Avatar>
-              }
-              label="example"
-              component="a"
-              href="#chip"
-              clickable
-            />
-            <Chip style={{marginRight:"5px"}}
+            <Chip
+              style={{ marginRight: "5px" }}
               avatar={<Avatar>{genre[0]}</Avatar>}
               label={genre}
               clickable
@@ -107,7 +95,13 @@ export default function MediaCard({
       </CardContent>
 
       <CardActions
-      style={{height: '70px',position: 'relative', zIndex: '2',backgroundColor: '#353432'}}>
+        style={{
+          height: "70px",
+          position: "relative",
+          zIndex: "2",
+          backgroundColor: "#353432"
+        }}
+      >
         <Button size="small" color="primary">
           Share
         </Button>
