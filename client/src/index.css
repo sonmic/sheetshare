@@ -115,7 +115,8 @@ span.MuiButton-label {
 .MuiInputLabel-animated,
 .MuiFormLabel-root,
 .Mui-focused,
-.MuiFormLabel-root {
+.MuiFormLabel-root,
+.MuiInputBase-input {
   color: goldenrod !important;
 }
 
