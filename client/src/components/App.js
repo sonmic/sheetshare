@@ -109,7 +109,7 @@ class App extends Component {
 
   render() {
     return (
-      <Container maxWidth="sm">
+      <Container maxWidth="md">
         {this.props.user != null ? <SubmitForm /> : null}
         {this.props.user != null ? this.renderPosts() : null}
       </Container>
