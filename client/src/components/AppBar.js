@@ -80,7 +80,8 @@ function PrimarySearchAppBar({ history, googleLogin, user, logout }) {
           handleMenuClose();
           history.push("/all");
         }}
-        style={{ color: 'goldenrod' }} >
+        style={{ color: "goldenrod" }}
+      >
         Profile
       </MenuItem>
       <Divider />
@@ -90,7 +91,8 @@ function PrimarySearchAppBar({ history, googleLogin, user, logout }) {
           logout();
           history.push("/");
         }}
-        style={{ color: 'goldenrod' }} >
+        style={{ color: "goldenrod" }}
+      >
         Log out
       </MenuItem>
     </Menu>
@@ -132,7 +134,7 @@ function PrimarySearchAppBar({ history, googleLogin, user, logout }) {
           <div className={classes.grow} />
           <BottomNavigationAction
             label="Search"
-            icon={<SearchIcon />}
+            icon={<SearchIcon className="searchIcon" fontSize="large" />}
             showLabel
             onClick={() => history.push("/search")}
           />

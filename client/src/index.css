@@ -131,3 +131,7 @@ div[class*="DropzoneArea-dropZone-"] {
 div[class*="DropzoneArea-dropZone-"] svg {
   color: goldenrod !important;
 }
+
+.searchIcon {
+  padding: 8px 0px 7px 0px !important;
+}
