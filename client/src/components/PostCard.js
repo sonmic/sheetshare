@@ -15,7 +15,9 @@ import IconButton from "@material-ui/core/IconButton";
 import ClassIcon from "@material-ui/icons/Class";
 import { Document, Page } from "react-pdf";
 import { pdfjs } from "react-pdf";
+
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
@@ -49,6 +51,7 @@ export default function MediaCard({
   return (
     <Card className={classes.card}>
       <a href={link} target="_blank">
+
         <CardMedia
           className={classes.media}
           style={{ position: "relative", zIndex: 0 }}
