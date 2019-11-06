@@ -16,8 +16,8 @@ class SearchBar extends React.Component {
   }
    //render posts
    renderPosts() {
-    console.log(this.props.posts);
-    return _.map(this.props.posts, (post, key) => {
+    console.log(this.props.aPosts);
+    return _.map(this.props.aPosts, (post, key) => {
     /*let searchterm = this.state.name;
     let array = this.props.posts;
     
@@ -75,7 +75,7 @@ class SearchBar extends React.Component {
         {this.renderSearchBar()}
         </div>
         
-        {this.props.posts != null ? this.renderPosts() : null}
+        {this.props.aPosts != null ? this.renderPosts() : null}
       </Container>
      
     );
@@ -83,7 +83,7 @@ class SearchBar extends React.Component {
 }
 function mapStateToProps(state, ownProps) {
   return {
-    posts: state.posts
+    aPosts: state.aPosts
   };
 }
 export default connect(
