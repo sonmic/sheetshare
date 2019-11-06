@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import _ from "lodash";
 import { connect } from "react-redux";
-import { storage } from '../firebase';
+import { storage } from "../firebase";
 import {
   getPosts,
   savePosts,
@@ -26,13 +26,12 @@ class App extends Component {
   componentDidMount() {
     this.props.getUser();
     this.props.getPosts();
-      }
-  
+  }
+
   handleDelete(id) {
     this.props.deletePost(id);
     this.props.getPosts();
   }
-
 
   handleChange(e) {
     this.setState({
@@ -79,7 +78,7 @@ class App extends Component {
 
     // console.log(post);
     this.props.savePosts(post);
-    
+
     this.setState({
       title: "",
       blurb: "",
