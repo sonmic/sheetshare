@@ -20,3 +20,4 @@ export const database = app.database();
 export const auth = app.auth();
 export const googleProvider = new app.auth.GoogleAuthProvider();
 export const storage = app.storage();
+export const cors = require("cors")({origin: true});

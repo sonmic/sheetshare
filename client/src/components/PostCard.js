@@ -13,8 +13,9 @@ import QueueMusicIcon from "@material-ui/icons/QueueMusic";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import IconButton from "@material-ui/core/IconButton";
 import ClassIcon from "@material-ui/icons/Class";
-import { Document } from 'react-pdf';
-
+import { Document, Page } from 'react-pdf';
+import { pdfjs } from 'react-pdf';
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
@@ -48,7 +49,7 @@ export default function MediaCard({
   link
 }) {
   const classes = useStyles();
-
+  const endsWithPdf = new URL(link).pathname.endsWith(".pdf");
   return (
     <Card className={classes.card}>
       <a
@@ -58,20 +59,42 @@ export default function MediaCard({
       >
         <CardMedia
           className={classes.media}
-          image={link}
-        />
+          style={{position: 'relative',zIndex: 0}}
+        >
+          {
+            endsWithPdf
+            ? (<Document
+            file={link}>
+              <Page 
+              pageNumber={1}
+              width={275} />
+            </Document>)
+            : (<img style={{width: 275}}src={link} alt="preview"/>)
+          }
+          
+        </CardMedia>
       </a>
 
-      <CardContent>
+      <CardContent
+      style={{position: 'relative',zIndex: 1, backgroundColor: '#353432'}}>
         <Typography style={{color:"goldenrod"}}gutterBottom variant="h5" component="h2">
           {title}
         </Typography>
-        <Typography style={{color:"goldenrod"}} variant="body2" color="textSecondary" component="p">
-          {/* <div className="genre">{genre}</div>
-            <div className="instrument">{instrument}</div> */}
+        <Typography style={{color:"goldenrod"}} variant="body2" color="textSecondary" component="div">
           <div className="blurb">{blurb}</div>
           <div className="chipsContainer">
-          
+            <Chip style={{margin:"5px"}}
+              avatar={
+                <Avatar>
+                  {" "}
+                  <MusicNoteIcon />
+                </Avatar>
+              }
+              label="example"
+              component="a"
+              href="#chip"
+              clickable
+            />
             <Chip style={{marginRight:"5px"}}
               avatar={<Avatar>{genre[0]}</Avatar>}
               label={genre}
@@ -83,7 +106,8 @@ export default function MediaCard({
         </Typography>
       </CardContent>
 
-      <CardActions>
+      <CardActions
+      style={{height: '70px',position: 'relative', zIndex: '2',backgroundColor: '#353432'}}>
         <Button size="small" color="primary">
           Share
         </Button>
@@ -102,4 +126,3 @@ export default function MediaCard({
     </Card>
   );
 }
-
