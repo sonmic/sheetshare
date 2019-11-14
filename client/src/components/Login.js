@@ -11,9 +11,6 @@ class Login extends Component {
                     <div className="col-sm-12 jumbotron" style={{marginTop : '--20px'}}>
                         <h5>Login with your favorite Social Network</h5>
                     </div>
-                    {/* <div className="col-sm-6">
-                        <button className="btn btn-danger btn-lg">Login With Google</button>
-                    </div> */}
                     <br />
                     <div onClick={this.props.googleLogin}className="col-sm-12">
                         <button className="btn btn-info btn-lg">Login With Google</button>

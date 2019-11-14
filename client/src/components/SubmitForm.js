@@ -13,10 +13,6 @@ import { connect } from "react-redux";
 import { getPosts, savePosts } from "../actions/postAction";
 
 const useStyles = makeStyles(theme => ({
-  container: {
-    // display: "flex",
-    // flexWrap: "wrap"
-  },
   textField: {
     margin: theme.spacing(1),
 
@@ -104,7 +100,6 @@ export default connect(
       genre: "",
       link: ""
     });
-    // setFile(null);
   };
 
   return (
