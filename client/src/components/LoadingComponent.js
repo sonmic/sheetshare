@@ -25,7 +25,7 @@ class LoadingComponent extends Component {
     }
 
     render() {
-        //this code
+
         const { userLoading, postsLoading, children } = this.props;
         if ((!userLoading && !postsLoading) || this.props.user === null) {
             return <div>{children}</div>

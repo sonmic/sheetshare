@@ -1,7 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { AppBar } from "@material-ui/core";
-// import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -99,7 +98,6 @@ function PrimarySearchAppBar({ history, googleLogin, user, logout }) {
   );
   const getGreeting = () => {
     const { displayName } = user;
-    // console.log(user);
     return displayName ? `Hi, ${user.displayName}!` : "Hi!";
   };
   const getAvatar = () => {

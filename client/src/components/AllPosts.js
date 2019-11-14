@@ -30,9 +30,10 @@ class AllPosts extends Component {
 
   //render posts
   renderPosts() {
-    // console.log(this.props.posts);
+
     return _.map(this.props.aPosts, (post, key) => {
       return (
+
         <PostCard
           key={key}
           title={post.title}
@@ -41,6 +42,7 @@ class AllPosts extends Component {
           genre={post.genre}
           blurb={post.blurb}
         ></PostCard>
+        
       );
     });
   }

@@ -16,22 +16,16 @@ class SearchBar extends React.Component {
   }
    //render posts
    renderPosts() {
-    console.log(this.props.aPosts);
+
     return _.map(this.props.aPosts, (post, key) => {
-    /*let searchterm = this.state.name;
-    let array = this.props.posts;
-    
-    const searchFilter = (searchterm, arr) => {
-      let term = searchterm.toLowerCase();
-      return this.props.posts
-    }*/
+
     let term = this.state.name;
     const potentialMatches = [post.instrument, post.genre, post.title];
     const re = new RegExp(term, "i");
     window.re = re;
+
     if (potentialMatches.some(pm => pm.match(re))){
-      
-    
+
       return (
         <PostCard
           key={key}
@@ -41,6 +35,7 @@ class SearchBar extends React.Component {
           blurb={post.blurb}
           link={post.link}
         ></PostCard>
+        
       );
     } 
     });
